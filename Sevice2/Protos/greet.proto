@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "Service2";
+
+package service2;
+
+service Service2 {
+  rpc Method2 (Request2) returns (Response2);
+}
+
+message Request2 {
+  string message = 1;
+}
+
+message Response2 {
+  string reply = 1;
+}

@@ -1,0 +1,23 @@
+version: '3'
+services:
+  Service1:
+    build:
+      context: ./Service1
+      dockerfile: Dockerfile
+    ports:
+      - "50051:80"
+  Service2:
+    build:
+      context: ./Service2
+      dockerfile: Dockerfile
+    ports:
+      - "50052:80"
+  mvc-app:
+    build:
+      context: ./mvc-app
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - Service1
+      - Service2
